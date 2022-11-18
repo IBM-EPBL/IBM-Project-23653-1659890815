@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title> Hand Written Digit Recongizer</title>
+</head>
+<style>
+    * {
+    border: 0;
+    margin: 0;
+}
+
+.parent-container {
+    width: 100%;
+    float: left;
+}
+
+.header {
+    width: 100%;
+    height: 80px;
+    float: left;
+    background-color: lightslategray;
+    border-bottom: 5px solid rgb(100, 93, 93) ;
+}
+
+.heading {
+    padding: 30px;
+    float: left;
+    color: white ;
+    font-size: 18px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    padding: 30px;
+    float: right;
+}
+
+li
+{
+    display: inline;  
+    padding: 20px;
+    margin: 0px 10px;   
+    color: white;   
+}
+
+li a {
+    display: inline;
+    text-align: center;
+    font-size: 18px;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: white;
+}
+
+li a:hover {
+    color: lightblue;
+}
+
+.body-container {
+    width: 100%;
+    float: left;
+}
+
+.background-image
+{
+    width: 100%;
+    float: left;
+}
+
+.image
+{
+    width: 100%;
+    height: 650px;
+    float: left;
+}
+.text{
+    position: absolute;
+    padding: 20px;
+    width: 50%;
+    height: 50px;
+    text-align: center;
+}
+
+.title
+{
+    text-align: center;
+    padding: 10px;
+}
+
+.submit-btn
+{
+
+text-align: center;
+}
+
+.button
+{
+    margin: 20px;
+}
+
+.btn
+{
+    padding: 15px;
+    margin: 20px;
+    border: 1px solid black;
+    border-radius: 3px;
+    background-color: lightblue;
+    cursor: pointer;
+}
+
+.img::after
+{
+    width: 200px;
+    height: 200px;
+}
+.image-border
+{
+    border : 3px solid black;
+    width: 200px;
+    height: 200px;
+    margin: auto;
+}
+
+.file
+{
+    margin:30px;
+}
+</style>
+
+<body>
+    <div class="Parent-container">
+        <div class="header">
+            <h3 class="heading">Hand Written Recognition</h3>
+            <div class="navbar">
+                <ul>
+                    <li><a href="jira-1.html">Home</a></li>
+                    <li><a href="jira-2.html">Recognize</a></li>
+                    <!-- <li><a href="/templates/index.html">Home</a></li>
+                    <li><a href="/templates/web.html">Recognize</a></li> -->
+                </ul>
+            </div>
+        </div>
+
+        <div class="background-image">
+            <img src="C:\Users\vimal\Downloads\Home.jpg" class="image">
+            <div class="text">
+                <form action="/web" method="POST" enctype="multipart/form-data">
+                    <div class="file">
+                        <label>Select a image:</label>
+                        <input id="image" type="file" name="image" accept="image/png, image/jpeg" onchange="preview()">
+                    </div>
+                    <div class="image-border">
+                        <img id="frame" class="img" src="" />
+                    </div>
+                    <div class="button">
+                        <button type="submit" class="btn">Predict</button>
+                        <button type="button" class="btn" onclick="cleardata()">&nbsp Clear &nbsp</button>
+                    </div>
+                    <div>
+                        <h3>The Number is:{{num}}</h3>
+                    </div>
+                </form>
+            </div>
+        </div>  
+    </div>
+
+</body>
+
+<script>
+    function preview() {
+        document.getElementById("frame").src = URL.createObjectURL(event.target.files[0]);
+    }
+
+    function cleardata(){
+        document.getElementById("frame").src = "";
+        document.getElementById("image").value = "";
+    }
+
+</script>
+
+</html>
