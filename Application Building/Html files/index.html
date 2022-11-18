@@ -1,1 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .background{
+        height:100vh;
+    }
+    .background img{
+        width:100%;
+        height:100%;
+    }
+    .Header{
+        position:absolute;
+        transform:translate(-60,-30);
+        color:black;
+        font-size: xx-large;
+        right: 0px;
+        left: 450px;
+        top:30px;
+        bottom:0px;
+        font-style: italic;
+    }
+    .navbar{
+        position:absolute;
+        transform:translate(-60,-50);
+        top:12px;
+        left:1200px;
+        right:600px;
 
+    }
+    .text{
+        position:absolute;
+        transform:translate(_60,-49);
+        top:140px;
+        bottom:0px;
+        left:10px;
+        right:0px;
+        
+    }
+    .text h1{
+        text-decoration: underline;
+    }
+
+
+</style>
+<body>
+    <div class="background">
+        <img src="C:\Users\vimal\Downloads\Home.jpg">
+
+    </div>
+    <div class="Header">
+        <p> A Novel Method For Handwritten Recognition System</p>
+    </div>
+    <div class="navbar">
+        <ul>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <br>
+            <li><a href="{{ url_for('web') }}">Recognize</a></li>
+            <!-- <li><a href="/templates/index.html">Home</a></li>
+            <li><a href="/templates/web.html">Recognize</a></li> -->
+        </ul>
+    </div>
+    <div class="text">
+        <h1 class="title">Handwritten Recognition System:-</h1>
+        <p class="details">Handwritten Text Recogntion is a technology that is much in this world as of today. 
+            This digit Recongnition system is used to recongnize the digits from mthe different sources like emails, 
+            bank cheque, papers ,images, etc. Before proper implementation of this technology we have relied on writing texts
+             with our hands which can result in errors. It's difficult to store and access physical data with effiency . The project
+              presents recongnzing the handwritten digits (0to9) from the famous MNIST dataset. Here we will 
+            be using artifical nenural networks/ convolution neural network.</p>
+    </div>
+    
+        
+    </div>
+    
+</body>
+</html>
